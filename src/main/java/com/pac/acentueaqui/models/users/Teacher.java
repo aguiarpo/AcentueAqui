@@ -1,11 +1,10 @@
-package com.pac.acentueaqui.models;
+package com.pac.acentueaqui.models.users;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import java.util.List;
 
 @Entity
 @Getter
@@ -18,9 +17,10 @@ public class Teacher{
     @Column(name = "id")
     private Long code;
 
+    @Column(unique=true)
     @Email
     private String email;
 
-    @OneToMany(mappedBy = "user")
-    private List<User> users;
+    @ManyToOne
+    private User user;
 }
