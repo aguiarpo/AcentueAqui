@@ -38,4 +38,11 @@ public class School {
 
     @OneToMany(mappedBy = "class")
     private List<Class> classes;
+
+    @ManyToMany
+    @JoinTable(
+            name = "teacher_school",
+            joinColumns = @JoinColumn(name = "school_id"),
+            inverseJoinColumns = @JoinColumn(name = "teacher_id"))
+    private List<Teacher> teachers;
 }
