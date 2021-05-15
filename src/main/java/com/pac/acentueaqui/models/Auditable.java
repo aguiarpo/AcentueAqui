@@ -1,6 +1,5 @@
 package com.pac.acentueaqui.models;
 
-
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
@@ -17,7 +16,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @EntityListeners(AuditingEntityListener.class)
-class Auditable{
+public class Auditable{
     @DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss")
     @CreatedDate
     @Column(nullable = false, updatable = false)
