@@ -1,5 +1,6 @@
 package com.pac.acentueaqui.models.users;
 
+import com.pac.acentueaqui.models.questions.QuestionStudent;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -31,4 +32,7 @@ public class Student {
 
     @ManyToOne
     private User user;
+
+    @OneToMany(mappedBy = "student")
+    private List<QuestionStudent> questionStudents;
 }

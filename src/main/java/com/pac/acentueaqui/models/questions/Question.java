@@ -2,6 +2,7 @@ package com.pac.acentueaqui.models.questions;
 
 import com.pac.acentueaqui.models.Auditable;
 import com.pac.acentueaqui.models.Class;
+import com.pac.acentueaqui.models.users.Student;
 import com.pac.acentueaqui.models.users.Teacher;
 import lombok.Getter;
 import lombok.Setter;
@@ -59,4 +60,7 @@ public class Question extends Auditable {
             joinColumns = @JoinColumn(name = "question_id"),
             inverseJoinColumns = @JoinColumn(name = "class_id"))
     private List<Class> classes;
+
+    @OneToMany(mappedBy = "question")
+    private List<QuestionStudent> questionStudents;
 }
