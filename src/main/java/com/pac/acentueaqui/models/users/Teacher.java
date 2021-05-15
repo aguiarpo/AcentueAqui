@@ -1,5 +1,6 @@
 package com.pac.acentueaqui.models.users;
 
+import com.pac.acentueaqui.models.Class;
 import com.pac.acentueaqui.models.Question;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,4 +32,7 @@ public class Teacher{
 
     @ManyToMany(mappedBy = "teachers")
     private List<School> schools;
+
+    @ManyToMany(mappedBy = "teachers")
+    private List<Class> classes;
 }
