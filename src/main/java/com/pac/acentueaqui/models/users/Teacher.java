@@ -1,7 +1,7 @@
 package com.pac.acentueaqui.models.users;
 
 import com.pac.acentueaqui.models.Class;
-import com.pac.acentueaqui.models.Question;
+import com.pac.acentueaqui.models.questions.Question;
 import lombok.Getter;
 import lombok.Setter;
 
