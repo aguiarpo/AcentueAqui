@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,4 +22,7 @@ public class Accentuation extends Auditable {
     @NotNull(message = "Nome não pode ser Nulo")
     @Column(length = 60)
     private String name;
+
+    @ManyToMany(mappedBy = "accentuations")
+    private List<Question> questions;
 }

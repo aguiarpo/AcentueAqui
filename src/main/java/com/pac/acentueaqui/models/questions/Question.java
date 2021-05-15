@@ -1,6 +1,7 @@
 package com.pac.acentueaqui.models.questions;
 
 import com.pac.acentueaqui.models.Auditable;
+import com.pac.acentueaqui.models.Class;
 import com.pac.acentueaqui.models.users.Teacher;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,6 +9,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -43,4 +45,18 @@ public class Question extends Auditable {
 
     @ManyToOne
     private Teacher teacher;
+
+    @ManyToMany
+    @JoinTable(
+            name = "accentuation_question",
+            joinColumns = @JoinColumn(name = "question_id"),
+            inverseJoinColumns = @JoinColumn(name = "accentuation_id"))
+    private List<Accentuation> accentuations;
+
+    @ManyToMany
+    @JoinTable(
+            name = "class_question",
+            joinColumns = @JoinColumn(name = "question_id"),
+            inverseJoinColumns = @JoinColumn(name = "class_id"))
+    private List<Class> classes;
 }
