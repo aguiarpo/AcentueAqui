@@ -1,5 +1,6 @@
 package com.pac.acentueaqui.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,9 +23,13 @@ public class User extends Auditable {
     private String name;
 
     @NotEmpty(message = "Senha não pode estar vazia")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @Enumerated(EnumType.STRING)
     @NotNull
     private LevelsOfAccess levelsOfAccess;
+
+    @ManyToOne
+    private Teacher teacher;
 }
