@@ -23,6 +23,7 @@ public class User extends Auditable {
     private Long code;
 
     @NotNull(message = "Nome não pode ser Nulo")
+    @Column(length = 60)
     private String name;
 
     @NotEmpty(message = "Senha não pode estar vazia")
