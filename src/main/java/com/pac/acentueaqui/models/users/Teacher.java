@@ -28,4 +28,7 @@ public class Teacher{
 
     @OneToMany(mappedBy = "question")
     private List<Question> questions;
+
+    @ManyToMany(mappedBy = "teachers")
+    private List<School> schools;
 }
