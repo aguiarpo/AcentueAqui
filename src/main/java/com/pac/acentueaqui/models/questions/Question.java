@@ -1,5 +1,6 @@
-package com.pac.acentueaqui.models;
+package com.pac.acentueaqui.models.questions;
 
+import com.pac.acentueaqui.models.Auditable;
 import com.pac.acentueaqui.models.users.Teacher;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +14,7 @@ import java.util.Date;
 @Setter
 @SequenceGenerator(name = "question_seq", sequenceName = "question_seq",
         initialValue = 2, allocationSize = 1)
-public class Question extends Auditable{
+public class Question extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "question_seq")

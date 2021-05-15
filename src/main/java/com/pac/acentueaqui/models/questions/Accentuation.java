@@ -1,5 +1,6 @@
-package com.pac.acentueaqui.models;
+package com.pac.acentueaqui.models.questions;
 
+import com.pac.acentueaqui.models.Auditable;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @SequenceGenerator(name = "accentuation_seq", sequenceName = "accentuation_seq",
         initialValue = 2, allocationSize = 1)
-public class Accentuation extends Auditable{
+public class Accentuation extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "accentuation_seq")
     @Column(name = "id")
