@@ -1,12 +1,15 @@
-package com.pac.acentueaqui.models;
+package com.pac.acentueaqui.models.users;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.pac.acentueaqui.models.Auditable;
+import com.pac.acentueaqui.models.LevelsOfAccess;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Getter
@@ -30,6 +33,15 @@ public class User extends Auditable {
     @NotNull
     private LevelsOfAccess levelsOfAccess;
 
-    @ManyToOne
-    private Teacher teacher;
+    @OneToMany(mappedBy = "teacher")
+    private List<Teacher> teachers;
+
+    @OneToMany(mappedBy = "admin")
+    private List<Admin> admins;
+
+    @OneToMany(mappedBy = "school")
+    private List<School> schools;
+
+    @OneToMany(mappedBy = "student")
+    private List<Student> students;
 }
