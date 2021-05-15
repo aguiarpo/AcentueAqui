@@ -1,7 +1,6 @@
 package com.pac.acentueaqui.models;
 
 import com.pac.acentueaqui.models.users.School;
-import com.pac.acentueaqui.models.users.User;
 import lombok.Getter;
 import lombok.Setter;
 
