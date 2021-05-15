@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @SequenceGenerator(name = "class_seq", sequenceName = "class_seq",
         initialValue = 2, allocationSize = 1)
-public class Class {
+public class Class extends Auditable{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "class_seq")
     @Column(name = "id")
