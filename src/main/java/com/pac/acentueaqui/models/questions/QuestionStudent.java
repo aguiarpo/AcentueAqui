@@ -8,6 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalTime;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -23,7 +24,7 @@ public class QuestionStudent {
     @NotNull(message = "Tempo não pode ser nulo")
     @Temporal(TemporalType.TIME)
     @DateTimeFormat(pattern = "hh:mm:ss")
-    private LocalTime publicationTime;
+    private Date publicationTime;
 
     @NotNull(message = "Tentativas não pode ser nulo")
     private Integer attempts;
