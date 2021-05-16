@@ -27,7 +27,7 @@ public class Teacher{
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "teacher")
     private List<Question> questions;
 
     @ManyToMany(mappedBy = "teachers")

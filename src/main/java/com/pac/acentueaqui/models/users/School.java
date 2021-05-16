@@ -36,7 +36,7 @@ public class School {
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy = "class")
+    @OneToMany(mappedBy = "school")
     private List<Class> classes;
 
     @ManyToMany

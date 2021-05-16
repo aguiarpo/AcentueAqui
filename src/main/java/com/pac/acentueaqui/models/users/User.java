@@ -34,15 +34,15 @@ public class User extends Auditable {
     @NotNull
     private LevelsOfAccess levelsOfAccess;
 
-    @OneToMany(mappedBy = "teacher")
+    @OneToMany(mappedBy = "user")
     private List<Teacher> teachers;
 
-    @OneToMany(mappedBy = "admin")
+    @OneToMany(mappedBy = "user")
     private List<Admin> admins;
 
-    @OneToMany(mappedBy = "school")
+    @OneToMany(mappedBy = "user")
     private List<School> schools;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "user")
     private List<Student> students;
 }
