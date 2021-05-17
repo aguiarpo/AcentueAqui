@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
     List<User> findByLevelsOfAccess(LevelsOfAccess levelsOfAccess);
-
+    User findByUsername(String username);
 }
