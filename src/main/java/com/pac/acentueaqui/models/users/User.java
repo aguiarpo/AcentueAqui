@@ -27,6 +27,9 @@ public class User extends Auditable {
     @Column(length = 60)
     private String name;
 
+    @NotNull(message = "Username não pode ser Nulo")
+    private String username;
+
     @NotEmpty(message = "Senha não pode estar vazia")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
@@ -40,6 +43,7 @@ public class User extends Auditable {
     private List<Teacher> teachers;
 
     @OneToMany(mappedBy = "user")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @JsonIgnore
     private List<Admin> admins;
 
