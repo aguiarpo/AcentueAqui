@@ -1,5 +1,7 @@
 package com.pac.acentueaqui.models.users;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,6 +24,7 @@ public class Admin{
     private String email;
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private User user;
 }
 
