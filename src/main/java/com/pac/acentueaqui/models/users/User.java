@@ -1,5 +1,6 @@
 package com.pac.acentueaqui.models.users;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pac.acentueaqui.models.Auditable;
 import com.pac.acentueaqui.models.LevelsOfAccess;
@@ -35,14 +36,18 @@ public class User extends Auditable {
     private LevelsOfAccess levelsOfAccess;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Teacher> teachers;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Admin> admins;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<School> schools;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Student> students;
 }
