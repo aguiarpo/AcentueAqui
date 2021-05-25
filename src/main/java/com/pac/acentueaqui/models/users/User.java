@@ -6,6 +6,7 @@ import com.pac.acentueaqui.models.Auditable;
 import com.pac.acentueaqui.models.LevelsOfAccess;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -54,4 +55,9 @@ public class User extends Auditable {
     @OneToMany(mappedBy = "user")
     @JsonIgnore
     private List<Student> students;
+
+    public void setBcryptPassword(){
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        this.password = bCryptPasswordEncoder.encode(this.password);
+    }
 }
