@@ -37,6 +37,7 @@ public class AdminEndpoint {
             user.setName("Lucas Eduardo");
             user.setLevelsOfAccess(LevelsOfAccess.ADMIN);
             user.setPassword("admin123");
+            user.setBcryptPassword();
             user.setUsername("eduardo.aguiarpo@gmail.com");
             user.setCreatedBy("Sistema");
             user.setCreatedDate(LocalDateTime.now());
