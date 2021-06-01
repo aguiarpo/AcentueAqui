@@ -26,7 +26,6 @@ public class UserEndpoint {
     @GetMapping(path = "/user/get/login")
     public ResponseEntity<?> getLogin(@AuthenticationPrincipal UserDetails auth){
         User user = userDao.findByUsername(auth.getUsername());
-        user.getCode();
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 }
