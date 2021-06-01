@@ -8,8 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -31,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { // Classe que
                 .httpBasic()
                 .and()
                 .cors()
+                .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .and()
                 .csrf().disable();
 
@@ -38,7 +38,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { // Classe que
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        auth.userDetailsService(customUserDetailService).passwordEncoder(passwordEncoder);
+        auth.userDetailsService(customUserDetailService).passwordEncoder(new BCryptPasswordEncoder());
     }
 }
