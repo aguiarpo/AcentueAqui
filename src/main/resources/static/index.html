@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <label for="fname">Username:</label>
+    <input type="text" id="fname" name="fname">
+    <label for="fpassword">Senha:</label>
+    <input type="password" id="fpassword" name="fpassword">
+    <button id="logar">Logar</button>
+    <button id="deslogar">Deslogar</button>
+</body>
+</html>
+<script>
+    $(document).ready(function() {
+
+        $('#logar').click(function (){
+           console.log("Click");
+           logar();
+        });
+
+        $('#deslogar').click(function (){
+            console.log("Click");
+            deslogar();
+        });
+
+        function deslogar(){
+            $.ajax({
+                type: "GET",
+                url: "http://localhost/logout",
+                error: function (){
+                    alert("Error ao deslogar");
+                },
+                success: function (){
+                    alert("Deslogado");
+                },
+            });
+        }
+
+        function logar(){
+            let username =$("#fname").val();
+            let password  =$("#fpassword").val();
+            console.log("Password: " + password + ", Username: " + username);
+            $.ajax({
+                type: "GET",
+                url: "http://localhost/v1/user/get/login",
+                headers: {
+                    'Authorization': 'Basic ' + btoa(username + ':' +password)
+                },
+                error: function (data){
+                    console.log(data);
+                    alert("Error ao logar")
+                },
+                success: function (data){
+                    console.log(data);
+                    alert("Bem vindo " + data.name);
+                },
+            });
+        }
+    });
+</script>
