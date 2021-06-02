@@ -16,6 +16,9 @@
     <input type="password" id="fpassword" name="fpassword">
     <button id="logar">Logar</button>
     <button id="deslogar">Deslogar</button>
+    <br>
+    <div>Tipo de Usuário: </div>
+    <div id="type"></div>
 </body>
 </html>
 <script>
@@ -40,6 +43,7 @@
                 },
                 success: function (){
                     alert("Deslogado");
+                    $("#type").text('');
                 },
             });
         }
@@ -61,6 +65,7 @@
                 success: function (data){
                     console.log(data);
                     alert("Bem vindo " + data.name);
+                    $("#type").text(data.levelsOfAccess);
                 },
             });
         }
