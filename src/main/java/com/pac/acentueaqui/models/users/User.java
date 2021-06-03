@@ -18,6 +18,7 @@ import java.util.List;
 @Setter
 @SequenceGenerator(name = "user_seq", sequenceName = "user_seq",
         initialValue = 2, allocationSize = 1)
+@Table(name="`User`")
 public class User extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
