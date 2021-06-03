@@ -37,7 +37,7 @@
         function deslogar(){
             $.ajax({
                 type: "GET",
-                url: "http://localhost/logout",
+                url: "http://acentueaqui.herokuapp.com/logout",
                 error: function (){
                     alert("Error ao deslogar");
                 },
@@ -54,7 +54,7 @@
             console.log("Password: " + password + ", Username: " + username);
             $.ajax({
                 type: "GET",
-                url: "http://localhost/v1/user/get/login",
+                url: "http://acentueaqui.herokuapp.com/v1/user/get/login",
                 headers: {
                     'Authorization': 'Basic ' + btoa(username + ':' +password)
                 },
