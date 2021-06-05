@@ -1,4 +1,4 @@
-package com.pac.acentueaqui.endpoints;
+package com.pac.acentueaqui.endpoints.user;
 
 import com.pac.acentueaqui.models.LevelsOfAccess;
 import com.pac.acentueaqui.models.users.Teacher;
