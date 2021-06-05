@@ -1,5 +1,6 @@
 package com.pac.acentueaqui.models.users;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pac.acentueaqui.models.Class;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,7 +34,7 @@ public class School {
     @Column(length = 15)
     private String telephone;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private User user;
 
     @OneToMany(mappedBy = "school")

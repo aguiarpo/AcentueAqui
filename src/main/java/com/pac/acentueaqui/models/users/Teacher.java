@@ -24,7 +24,7 @@ public class Teacher{
     @Email
     private String email;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private User user;
 
     @OneToMany(mappedBy = "teacher")

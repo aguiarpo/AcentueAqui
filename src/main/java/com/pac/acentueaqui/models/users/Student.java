@@ -1,5 +1,6 @@
 package com.pac.acentueaqui.models.users;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.pac.acentueaqui.models.questions.QuestionStudent;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,11 +27,11 @@ public class Student {
     @NotNull(message = "Matrícula não pode ser nulo")
     private String registration;
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @JsonFormat(pattern="dd-MM-yyyy")
     @NotNull(message = "Data de nascimento não pode ser nulo")
     private LocalDate birthDate;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private User user;
 
     @OneToMany(mappedBy = "student")
