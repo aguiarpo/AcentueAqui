@@ -1,8 +1,6 @@
 package com.pac.acentueaqui.models.users;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.pac.acentueaqui.models.Auditable;
 import com.pac.acentueaqui.models.LevelsOfAccess;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +17,7 @@ import java.util.List;
 @SequenceGenerator(name = "user_seq", sequenceName = "user_seq",
         initialValue = 2, allocationSize = 1)
 @Table(name="`User`")
-public class User extends Auditable {
+public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
     @Column(name = "id")
@@ -30,6 +28,7 @@ public class User extends Auditable {
     private String name;
 
     @NotNull(message = "Username não pode ser Nulo")
+    @Column(unique=true)
     private String username;
 
     @NotEmpty(message = "Senha não pode estar vazia")
@@ -37,24 +36,22 @@ public class User extends Auditable {
     private String password;
 
     @Enumerated(EnumType.STRING)
-    @NotNull
     private LevelsOfAccess levelsOfAccess;
 
     @OneToMany(mappedBy = "user")
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Teacher> teachers;
 
     @OneToMany(mappedBy = "user")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @JsonIgnore
     private List<Admin> admins;
 
     @OneToMany(mappedBy = "user")
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<School> schools;
 
     @OneToMany(mappedBy = "user")
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Student> students;
 
     public void setBcryptPassword(){
