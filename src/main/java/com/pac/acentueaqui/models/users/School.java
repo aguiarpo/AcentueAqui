@@ -30,9 +30,6 @@ public class School {
     @Email
     private String email;
 
-    @NotNull(message = "Telefone não pode ser nulo")
-    @Column(length = 15)
-    private String telephone;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private User user;
@@ -40,7 +37,7 @@ public class School {
     @OneToMany(mappedBy = "school")
     private List<Class> classes;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "teacher_school",
             joinColumns = @JoinColumn(name = "school_id"),

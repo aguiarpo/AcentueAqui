@@ -23,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { // Classe que
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/*/user/**").hasRole("USER")
+                .antMatchers("/*/school/**").hasRole("SCHOOL")
                 .antMatchers("/*/admin/**").hasRole("ADMIN")
                 .antMatchers("/*/vet/**").hasRole("VET")
                 .and()

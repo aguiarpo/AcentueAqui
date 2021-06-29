@@ -1,5 +1,6 @@
 package com.pac.acentueaqui.models.questions;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,9 +20,14 @@ public class Accentuation{
     private Long code;
 
     @NotNull(message = "Nome não pode ser Nulo")
-    @Column(length = 60)
+    @Column(length = 60, unique = true)
     private String name;
 
+    @NotNull(message = "Formato não pode ser Nulo")
+    @Column(length = 1, unique = true)
+    private String format;
+
     @ManyToMany(mappedBy = "accentuations")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Question> questions;
 }

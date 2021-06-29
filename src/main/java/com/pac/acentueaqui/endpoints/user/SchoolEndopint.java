@@ -41,7 +41,7 @@ public class SchoolEndopint {
         return new ResponseEntity<>(school, HttpStatus.OK);
     }
 
-    @GetMapping(path = "admin/findbyemail/school/{email}")
+    @GetMapping(path = "school/findbyemail/school/{email}")
     public ResponseEntity<?> findByEmail(@PathVariable String email){
         School school = schoolDao.findByEmail(email);
         return new ResponseEntity<>(school, HttpStatus.OK);

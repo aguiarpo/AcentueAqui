@@ -41,7 +41,7 @@ public class TeacherEndpoint {
         return new ResponseEntity<>(teacher, HttpStatus.OK);
     }
 
-    @GetMapping(path = "admin/findbyemail/teacher/{email}")
+    @GetMapping(path = "school/findbyemail/teacher/{email}")
     public ResponseEntity<?> findByEmail(@PathVariable String email){
         Teacher teacher = teacherRepository.findByEmail(email);
         return new ResponseEntity<>(teacher, HttpStatus.OK);
