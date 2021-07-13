@@ -47,6 +47,12 @@ public class StudentEndpoint {
         return new ResponseEntity<>(saved, HttpStatus.OK);
     }
 
+    @DeleteMapping(path = "school/student/remove/student/{code}")
+    public ResponseEntity<?> removeStudent(@PathVariable Long code){
+        studentRepository.deleteById(code);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
     @PutMapping(path = "school/student/update/class/{registration}/{name}")
     public ResponseEntity<?> updateClass(@PathVariable String registration,
                                          @PathVariable String name){

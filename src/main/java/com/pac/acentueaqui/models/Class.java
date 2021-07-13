@@ -44,5 +44,6 @@ public class Class{
     private List<Student> students;
 
     @ManyToMany(mappedBy = "classes")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Question> questions;
 }

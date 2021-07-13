@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.sql.Time;
 import java.time.LocalTime;
 import java.util.Date;
 
@@ -21,16 +22,15 @@ public class QuestionStudent {
     @Column(name = "id")
     private Long code;
 
-    @NotNull(message = "Tempo não pode ser nulo")
-    @Temporal(TemporalType.TIME)
-    @DateTimeFormat(pattern = "hh:mm:ss")
-    private Date publicationTime;
+    private Integer hour;
+    private Integer second;
+    private Integer min;
 
     @NotNull(message = "Tentativas não pode ser nulo")
     private Integer attempts;
 
     @NotNull(message = "Resposta certa não pode ser nulo")
-    private Integer rightAnswer;
+    private Boolean rightAnswer;
 
     @NotNull(message = "XP não pode ser nulo")
     private Integer xp;
