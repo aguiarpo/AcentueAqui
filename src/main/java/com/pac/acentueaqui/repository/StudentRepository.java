@@ -9,5 +9,4 @@ public interface StudentRepository extends PagingAndSortingRepository<Student, L
     List<Student> findAll();
     Student findByCode(Long code);
     Student findByRegistration(String registration);
-    List<Student> findByClasseSchoolEmail(String email);
 }

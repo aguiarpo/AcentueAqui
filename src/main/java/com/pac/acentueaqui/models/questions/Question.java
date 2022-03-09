@@ -1,6 +1,5 @@
 package com.pac.acentueaqui.models.questions;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pac.acentueaqui.models.Class;
 import com.pac.acentueaqui.models.users.Teacher;
 import lombok.Getter;
@@ -31,7 +30,7 @@ public class Question{
     private Date initialDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @NotNull(message = "Data final não pode ser nulo")
+    @NotNull(message = "Data inicial não pode ser nulo")
     private Date finalDate;
 
     @NotNull(message = "Valor de xp não pode ser nulo")
@@ -47,7 +46,6 @@ public class Question{
     private Teacher teacher;
 
     @ManyToMany
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @JoinTable(
             name = "accentuation_question",
             joinColumns = @JoinColumn(name = "question_id"),
@@ -55,7 +53,6 @@ public class Question{
     private List<Accentuation> accentuations;
 
     @ManyToMany
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @JoinTable(
             name = "class_question",
             joinColumns = @JoinColumn(name = "question_id"),
@@ -63,6 +60,5 @@ public class Question{
     private List<Class> classes;
 
     @OneToMany(mappedBy = "question")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<QuestionStudent> questionStudents;
 }

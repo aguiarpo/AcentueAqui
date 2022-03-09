@@ -32,7 +32,7 @@ public class UserEndpoint {
         this.teacherRepository = teacherRepository;
     }
 
-    @GetMapping(path = "/get/login")
+    @GetMapping(path = "/user/get/login")
     public ResponseEntity<?> getLogin(@AuthenticationPrincipal UserDetails auth){
         User user = userDao.findByUsername(auth.getUsername());
         return new ResponseEntity<>(user, HttpStatus.OK);
@@ -72,7 +72,6 @@ public class UserEndpoint {
         admin.getUser().setLevelsOfAccess(find.getUser().getLevelsOfAccess());
         if(admin.getUser().getPassword() == null)
             admin.getUser().setPassword(find.getUser().getPassword());
-        else admin.getUser().setBcryptPassword();
         Admin saved = adminRepository.save(admin);
         return new ResponseEntity<>(saved, HttpStatus.OK);
     }
@@ -87,7 +86,6 @@ public class UserEndpoint {
         school.getUser().setLevelsOfAccess(find.getUser().getLevelsOfAccess());
         if(school.getUser().getPassword() == null)
             school.getUser().setPassword(find.getUser().getPassword());
-        else school.getUser().setBcryptPassword();
         School saved = schoolRepository.save(school);
         return new ResponseEntity<>(saved, HttpStatus.OK);
     }
@@ -102,7 +100,6 @@ public class UserEndpoint {
         teacher.getUser().setUsername(teacher.getEmail());
         if(teacher.getUser().getPassword() == null)
             teacher.getUser().setPassword(find.getUser().getPassword());
-        else teacher.getUser().setBcryptPassword();
         Teacher saved = teacherRepository.save(teacher);
         return new ResponseEntity<>(saved, HttpStatus.OK);
     }
@@ -117,7 +114,6 @@ public class UserEndpoint {
         student.getUser().setUsername(student.getRegistration());
         if(student.getUser().getPassword() == null)
             student.getUser().setPassword(find.getUser().getPassword());
-        else student.getUser().setBcryptPassword();
         Student saved = studentRepository.save(student);
         return new ResponseEntity<>(saved, HttpStatus.OK);
     }
