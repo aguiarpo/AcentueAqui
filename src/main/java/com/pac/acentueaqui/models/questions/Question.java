@@ -8,7 +8,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -27,11 +26,13 @@ public class Question{
     @Column(length = 20)
     private String word;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @NotNull(message = "Data inicial não pode ser nulo")
-    private LocalDate initialDate;
+    private Date initialDate;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @NotNull(message = "Data final não pode ser nulo")
-    private LocalDate finalDate;
+    private Date finalDate;
 
     @NotNull(message = "Valor de xp não pode ser nulo")
     private Integer valueXP;
@@ -46,6 +47,7 @@ public class Question{
     private Teacher teacher;
 
     @ManyToMany
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @JoinTable(
             name = "accentuation_question",
             joinColumns = @JoinColumn(name = "question_id"),
@@ -53,6 +55,7 @@ public class Question{
     private List<Accentuation> accentuations;
 
     @ManyToMany
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @JoinTable(
             name = "class_question",
             joinColumns = @JoinColumn(name = "question_id"),

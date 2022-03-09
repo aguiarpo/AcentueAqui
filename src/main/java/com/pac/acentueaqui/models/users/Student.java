@@ -1,6 +1,5 @@
 package com.pac.acentueaqui.models.users;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.pac.acentueaqui.models.Class;
 import com.pac.acentueaqui.models.questions.QuestionStudent;
 import lombok.Getter;
@@ -32,7 +31,6 @@ public class Student {
     @ManyToOne
     private Class classe;
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @OneToMany(mappedBy = "student")
     private List<QuestionStudent> questionStudents;
 }
