@@ -6,7 +6,7 @@ O tema era jogos educacionais infantis. Baseado nisso criamos um jogo de acentua
 
 ## Linguagens/Framework
 - O back-end foi desenvolvido em java com o framework spring boot
-- Front-end foi desenvolvido em angular
+- Front-end foi desenvolvido em angular(100% responsivo)
 - Banco de Dados utilizado foi o Postgresql
 
 ## Telas 
