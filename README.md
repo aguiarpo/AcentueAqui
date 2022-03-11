@@ -28,23 +28,18 @@ Obs: Possui níveis de administração o aplicativo: admin, escola e professor. 
 
 - Administrado por: Admin(Apenas Editar)
 <img src="https://user-images.githubusercontent.com/54685955/157887068-2061ede6-0249-456d-be7d-e1aa3989c8bb.jpeg" />
-<img src="https://user-images.githubusercontent.com/54685955/157887082-d35fbf32-81e3-43ce-a82f-e70561597783.jpeg" />
 
 - Administrado por: Admin(Apenas Editar)
 <img src="https://user-images.githubusercontent.com/54685955/157887070-380ab2c2-b689-41b5-9460-124cde67a7bf.jpeg" />
-<img src="https://user-images.githubusercontent.com/54685955/157887083-9a72265b-2aed-4d15-86bb-3c3fa0550b19.jpeg" />
 
 - Adminnistrado por: Escola(Criar, Editar e Remover)
 <img src="https://user-images.githubusercontent.com/54685955/157887067-48d600b7-565c-44a8-9d83-788e60822434.jpeg" />
-<img src="https://user-images.githubusercontent.com/54685955/157887081-d7356128-c17d-415d-b589-c5b7b839dc22.jpeg" />
 
 - Administrado por: Escola(Criar, Editar e Remover)
 <img src="https://user-images.githubusercontent.com/54685955/157887063-e845bcb8-a636-4ecb-92bb-1ea710cb3fd9.jpeg" />
-<img src="https://user-images.githubusercontent.com/54685955/157887080-e7e77f4a-9a1e-4d9c-82a8-59639eface64.jpeg" />
 
 - Adminstrado por: Admin(Criar, Editar e Remover)
 <img src="https://user-images.githubusercontent.com/54685955/157887062-767df18c-2b6e-41ec-a37f-e0a6f2b19732.jpeg" />
-<img src="https://user-images.githubusercontent.com/54685955/157887079-05593138-ac60-43d8-bc78-be145035e7ae.jpeg" />
 
 - Administrado por: Professor(Criar, Editar e Remover)
 <img src="https://user-images.githubusercontent.com/54685955/157887073-993e049e-f66e-43be-ae29-90d8303aa484.jpeg" />
