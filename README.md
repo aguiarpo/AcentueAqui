@@ -9,6 +9,9 @@ O tema era jogos educacionais infantis. Baseado nisso criamos um jogo de acentua
 - Front-end foi desenvolvido em angular(100% responsivo)
 - Banco de Dados utilizado foi o Postgresql
 
+## Tempo de desenvolvimento
+Entramos no meio do semestre e diferente dos outro grupos que eram de 5 pessoas, eramos apenas 2(Eduardo Aguiar e Lucas Franco). Foi desenvolvido entre 2 à 3 meses, porém não desenvolviámos todos os dias da semana
+
 ## Telas 
 ### Cadastro da Escola
 <img src="https://user-images.githubusercontent.com/54685955/157887054-fe0368e2-ecdf-4554-aabc-c2e70438e607.jpeg" />
