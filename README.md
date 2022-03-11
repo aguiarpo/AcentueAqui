@@ -1,5 +1,5 @@
 # Acentue Aqui
-<span color="red">Observação: Este projeto foi desenvolvido para a máteria PAC do 3º semestre da faculdade, onde era necessário a utilização da linguagem java, indiferente se fosse no back-end, front-end, mobile, ou desktop. E infelizmente acabamos não colocando a parte do front-end no git(feita em angular).</span>
+<span color="red">Observação: Este projeto foi desenvolvido para a máteria PAC do 3º semestre da faculdade, onde era necessário a utilização da linguagem java, indiferente se fosse no back-end, front-end, mobile, ou desktop. E infelizmente acabamos não colocando a parte do front-end no git(feita em angular) e o vídeo explicando o aplicativo foi apagado pelo professor no teams após o termino da matéria.</span>
 
 ## Tema
 O tema era jogos educacionais infantis. Baseado nisso criamos um jogo de acentuação, onde aparecia uma palavras e opções de acentos e tinha que escolher o certo e colocar na letra certa.
