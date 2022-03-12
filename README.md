@@ -83,4 +83,4 @@ Obs: Selecione a letra e o acento, independente da ordem, que a sua resposta ser
 <img src="https://user-images.githubusercontent.com/54685955/157903146-9820b9e9-538b-4468-82bd-1cb58401a822.jpg"/>
 
 ###Gráficos
-<img src="https://user-images.githubusercontent.com/54685955/157887078-b68a65cf-ab0d-42d6-8fd8-a443a1697d9f"/>
+<img src="https://user-images.githubusercontent.com/54685955/157887078-b68a65cf-ab0d-42d6-8fd8-a443a1697d9f.jpeg"/>
