@@ -79,7 +79,7 @@ Obs: Possui níveis de administração o aplicativo: admin, escola e professor. 
 2. Acentos: Opções de acentos que se pode escolher(definido pelo professor), basta apenas selecionar o acento desejado
 3. Número de Tentativas: Nesse caso se o estudante errar não possuirá mais nenhuma tentativa(número definido pelo professor)
 
-Obs: Selecione a letra e o acento, independente da ordem, que a sua resposta será avaliada
+Obs: Selecione a letra e o acento, independente da ordem, que a sua resposta será avaliada. O xp é baseado na dificuldade da palavra e quantas tentativas foram gastas.
 <img src="https://user-images.githubusercontent.com/54685955/157903146-9820b9e9-538b-4468-82bd-1cb58401a822.jpg"/>
 
 ### Gráficos
