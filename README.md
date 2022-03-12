@@ -82,5 +82,6 @@ Obs: Possui níveis de administração o aplicativo: admin, escola e professor. 
 Obs: Selecione a letra e o acento, independente da ordem, que a sua resposta será avaliada
 <img src="https://user-images.githubusercontent.com/54685955/157903146-9820b9e9-538b-4468-82bd-1cb58401a822.jpg"/>
 
-###Gráficos
+### Gráficos
+Obs: O Professor pode escolher se quer ver o gráfico da classe ou de um aluno específico
 <img src="https://user-images.githubusercontent.com/54685955/157887078-b68a65cf-ab0d-42d6-8fd8-a443a1697d9f.jpeg"/>
